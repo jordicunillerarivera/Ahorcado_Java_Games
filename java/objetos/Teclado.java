@@ -8,9 +8,6 @@ import java.awt.event.*;
 @SuppressWarnings("serial")
 public class Teclado extends JPanel {
 
-	// Atributos
-	private JLabel labelTeclado;
-
 	// Constructor
 	public Teclado() {
 		

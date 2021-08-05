@@ -8,7 +8,9 @@ public class AplicacionGrafica extends JFrame {
 	// Atributos
 	private Imagenes imagenes;
 	private Teclado teclado;
-	JScrollPane scrollPane;
+	private Menu menu;
+	private Pistas pistas;
+	private Palabra palabra;
 	
 
 	// Constructores
@@ -22,15 +24,27 @@ public class AplicacionGrafica extends JFrame {
 		getContentPane().setLayout(null);
 		
 		imagenes = new Imagenes();
+		imagenes.setBounds(701, 11, 436, 743);
+		getContentPane().add(imagenes);
+		
 		teclado = new Teclado();
+		teclado.setBounds(10, 381, 594, 268);
+		getContentPane().add(teclado);
 		
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(28,11,1210,756);
+		menu = new Menu();
+		menu.setBounds(10, 11, 594, 108);
+		getContentPane().add(menu);
 		
-		scrollPane.setViewportView(imagenes);
-		scrollPane.setViewportView(teclado);
+		pistas = new Pistas();
+		pistas.setBounds(10, 130, 634, 123);
+		getContentPane().add(pistas);
 		
-		
+		imagenes = new Imagenes();
+		getContentPane().add(imagenes);
+				
+		palabra = new Palabra();
+		palabra.setBounds(10, 264, 594, 97);
+		getContentPane().add(palabra);
 		
 	}
 }
