@@ -2,35 +2,25 @@ package objetos;
 
 import javax.swing.*;
 
-public class Imagenes extends JFrame {
+@SuppressWarnings("serial")
+public class Imagenes extends JPanel {
 	
 	// Atributos
-	private JPanel contentPane;
 	private JLabel labelImagen;
 	
 	// Constructor
 	public Imagenes() {
 		
-		// Creamos la ventana
-		setTitle("Ahorcado");
-		setBounds(400, 200, 523, 425);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setVisible(true);
-		
-			// Creacion del panel
-		// Creamos el panel
-		contentPane = new JPanel();
-		contentPane.setLayout(null);
-		setContentPane(contentPane);
+		setLayout(null);
 		
 		// Creamos el componente para la imagen
 		labelImagen=new JLabel();
-		labelImagen.setBounds(265,0,242,386);
+		labelImagen.setBounds(10,11,421,731);
 		labelImagen.setIcon(new ImageIcon(getClass().
-		      getResource("/Imagenes/" + 2 + ".PNG")));
+		      getResource("/Imagenes/" + 6 + ".png")));
 		labelImagen.setBorder(javax.swing.BorderFactory.createBevelBorder
 		      (javax.swing.border.BevelBorder.RAISED));
-		contentPane.add(labelImagen);
-	
+		add(labelImagen);
 	}
+	
 }
