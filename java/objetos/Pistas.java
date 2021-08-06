@@ -1,9 +1,12 @@
 package objetos;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 
 @SuppressWarnings("serial")
@@ -21,7 +24,7 @@ public class Pistas extends JPanel {
 		setLayout(null);
 		
 		final JButton btnPista = new JButton("Pista");
-		btnPista.setBounds(519, 11, 99, 49);
+		btnPista.setBounds(470, 11, 99, 49);
 		add(btnPista);
 		btnPista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -30,34 +33,42 @@ public class Pistas extends JPanel {
 		});
         
         labelImagen=new JLabel();
-        labelImagen.setBounds(10,11,99,89);
+        labelImagen.setBounds(10,11,90,90);
         labelImagen.setIcon(new ImageIcon(getClass().
-              getResource("/Imagenes/peepoPista.gif")));
+              getResource("/Imagenes/peepoPista80.gif")));
         add(labelImagen);
 
         labelImagen1=new JLabel();
-        labelImagen1.setBounds(110,11,99,89);
+        labelImagen1.setBounds(101,11,90,90);
         labelImagen1.setIcon(new ImageIcon(getClass().
-              getResource("/Imagenes/peepoPista.gif")));
+              getResource("/Imagenes/peepoPista80.gif")));
         add(labelImagen1);
         
         labelImagen2=new JLabel();
-        labelImagen2.setBounds(210,11,99,89);
+        labelImagen2.setBounds(192,11,90,90);
         labelImagen2.setIcon(new ImageIcon(getClass().
-              getResource("/Imagenes/peepoPista.gif")));
+              getResource("/Imagenes/peepoPista80.gif")));
         add(labelImagen2);
         
         labelImagen3=new JLabel();
-        labelImagen3.setBounds(309,11,99,89);
+        labelImagen3.setBounds(283,11,90,90);
         labelImagen3.setIcon(new ImageIcon(getClass().
-              getResource("/Imagenes/peepoPista.gif")));
+              getResource("/Imagenes/peepoPista80.gif")));
         add(labelImagen3);
         
         labelImagen4=new JLabel();
-        labelImagen4.setBounds(410,11,99,89);
+        labelImagen4.setBounds(374,11,90,90);
         labelImagen4.setIcon(new ImageIcon(getClass().
-              getResource("/Imagenes/peepoPista.gif")));
+              getResource("/Imagenes/peepoPista80.gif")));
         add(labelImagen4);
+        
+//        Border bordePista = new LineBorder(Color.black);
+//		labelImagen.setBorder(bordePista);
+//		labelImagen1.setBorder(bordePista);
+//		labelImagen2.setBorder(bordePista);
+//		labelImagen3.setBorder(bordePista);
+//		labelImagen4.setBorder(bordePista);
+		
         
 	}
 

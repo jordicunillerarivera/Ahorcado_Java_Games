@@ -15,7 +15,7 @@ public class Imagenes extends JPanel {
 		
 		// Creamos el componente para la imagen
 		labelImagen=new JLabel();
-		labelImagen.setBounds(10,11,421,731);
+		labelImagen.setBounds(0,0,382,591);
 		labelImagen.setIcon(new ImageIcon(getClass().
 		      getResource("/Imagenes/" + 6 + ".png")));
 		labelImagen.setBorder(javax.swing.BorderFactory.createBevelBorder
