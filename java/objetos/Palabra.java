@@ -27,7 +27,7 @@ public class Palabra extends JPanel {
 	palabras=generarPalabras();
 	int nRnd=rnd.nextInt(10);
 	palabra=palabras[nRnd];
-	caracteres=palabra.toCharArray();
+	caracteres=palabra.toUpperCase().toCharArray();
 	auxCaracteres=generarAuxiliar();
 	auxString=" ";
 	for(int i=0;i<auxCaracteres.length;i++) {
@@ -39,6 +39,17 @@ public class Palabra extends JPanel {
 	txtPalabra.setBounds(0,0,374,61);
 	txtPalabra.setForeground(Color.BLACK);
 	add(txtPalabra);		
+	}
+	
+	// Metodo
+	public void editarAuxiliar(char letra) {
+		for(int i=0;i<caracteres.length;i++) {
+			if(caracteres[i]==letra) {
+			auxCaracteres[i]=letra;
+			}else {
+			//	restarVida();
+			}
+		}
 	}
 	
 	public String[] generarPalabras() {

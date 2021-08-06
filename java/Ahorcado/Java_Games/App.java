@@ -8,6 +8,7 @@ public class App
     	
     	@SuppressWarnings("unused")
 		AplicacionGrafica a = new AplicacionGrafica();
+
     	
     }
 }

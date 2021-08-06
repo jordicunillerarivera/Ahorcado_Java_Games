@@ -57,5 +57,8 @@ public class AplicacionGrafica extends JFrame {
 		Border bordePalabra = new TitledBorder(new EtchedBorder(), "Palabra secreta");
 		palabra.setBorder(bordePalabra);
 		
+		teclado.llamarPalabra(palabra);
+		
 	}
+	
 }
