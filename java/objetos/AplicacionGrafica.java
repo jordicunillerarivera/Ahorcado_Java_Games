@@ -46,5 +46,8 @@ public class AplicacionGrafica extends JFrame {
 		palabra.setBounds(10, 264, 594, 97);
 		getContentPane().add(palabra);
 		
+		teclado.llamarPalabra(palabra);
+		
 	}
+	
 }

@@ -8,8 +8,13 @@ import java.awt.event.*;
 @SuppressWarnings("serial")
 public class Teclado extends JPanel {
 
+	// Atributo
+	private Palabra palabra;
+	
+	
 	// Constructor
 	public Teclado() {
+		
 		
 		setLayout(null);
 
@@ -21,6 +26,7 @@ public class Teclado extends JPanel {
 		btnA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnA.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('A');
 			}
 		});
 
@@ -30,6 +36,7 @@ public class Teclado extends JPanel {
 		btnB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnB.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('B');
 			}
 		});
 
@@ -266,4 +273,10 @@ public class Teclado extends JPanel {
 			}
 		});
 	}
+	
+	// Metodos
+	public void llamarPalabra(Palabra palabra) {
+		this.palabra=palabra;
+	}
+	
 }
