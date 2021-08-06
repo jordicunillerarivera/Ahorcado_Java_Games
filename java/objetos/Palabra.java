@@ -15,6 +15,7 @@ public class Palabra extends JPanel {
 	private char caracteres[];
 	private char auxCaracteres[];
 	private String auxString;
+	private JLabel txtPalabra;
 
 	public Palabra() {
 	
@@ -27,16 +28,16 @@ public class Palabra extends JPanel {
 	palabras=generarPalabras();
 	int nRnd=rnd.nextInt(10);
 	palabra=palabras[nRnd];
+	
 	caracteres=palabra.toUpperCase().toCharArray();
 	auxCaracteres=generarAuxiliar();
-	auxString=" ";
-	for(int i=0;i<auxCaracteres.length;i++) {
-		auxString+=auxCaracteres[i]+" ";
-	}
-	JLabel txtPalabra=new JLabel(auxString);
+	auxString=charToString();
+	
+	
+	txtPalabra  =new JLabel(auxString);
 	Font font = new Font("SansSerif", Font.BOLD, 30);
 	txtPalabra.setFont(font);
-	txtPalabra.setBounds(0,0,374,61);
+	txtPalabra.setBounds(10,0,374,62);
 	txtPalabra.setForeground(Color.BLACK);
 	add(txtPalabra);		
 	}
@@ -46,10 +47,24 @@ public class Palabra extends JPanel {
 		for(int i=0;i<caracteres.length;i++) {
 			if(caracteres[i]==letra) {
 			auxCaracteres[i]=letra;
+			System.out.println(auxCaracteres[i]);
 			}else {
-			//	restarVida();
+			System.out.println("no funsiono");
 			}
 		}
+		
+		auxString = charToString();
+		System.out.println(auxString);
+		txtPalabra.setText(auxString);
+
+	}
+	
+	public String charToString() {
+		auxString = " ";
+		for(int i=0;i<auxCaracteres.length;i++) {
+			auxString+=auxCaracteres[i]+" ";
+		}
+		return auxString;
 	}
 	
 	public String[] generarPalabras() {

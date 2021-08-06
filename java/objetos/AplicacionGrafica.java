@@ -24,7 +24,7 @@ public class AplicacionGrafica extends JFrame {
 		
 		// Creamos la ventana
 		setTitle("Ahorcado");
-		setBounds(400, 200, 1069, 681);
+		setBounds(400, 200, 1069, 725);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		getContentPane().setLayout(null);
@@ -34,19 +34,19 @@ public class AplicacionGrafica extends JFrame {
 		getContentPane().add(imagenes);
 		
 		teclado = new Teclado();
-		teclado.setBounds(10, 356, 594, 275);
+		teclado.setBounds(10, 367, 594, 275);
 		Border bordeTeclado = new TitledBorder(new EtchedBorder(), "Teclado");
 		teclado.setBorder(bordeTeclado);
 		getContentPane().add(teclado);
 		
 		menu = new Menu();
-		menu.setBounds(10, 11, 594, 108);
+		menu.setBounds(10, 11, 594, 121);
 		Border bordeMenu = new TitledBorder(new EtchedBorder(), "Menu");
 		menu.setBorder(bordeMenu);
 		getContentPane().add(menu);
 		
 		pistas = new Pistas();
-		pistas.setBounds(12, 130, 589, 215);
+		pistas.setBounds(12, 141, 589, 215);
 		Border bordePista = new LineBorder(Color.black);
 		pistas.setBorder(bordePista);
 		getContentPane().add(pistas);

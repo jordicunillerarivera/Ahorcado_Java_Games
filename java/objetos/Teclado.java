@@ -11,10 +11,8 @@ public class Teclado extends JPanel {
 	// Atributo
 	private Palabra palabra;
 	
-	
 	// Constructor
 	public Teclado() {
-		
 		
 		setLayout(null);
 
@@ -27,6 +25,7 @@ public class Teclado extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				btnA.setBackground(Color.lightGray);
 				palabra.editarAuxiliar('A');
+				btnA.setEnabled(false);
 			}
 		});
 
@@ -37,6 +36,7 @@ public class Teclado extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				btnB.setBackground(Color.lightGray);
 				palabra.editarAuxiliar('B');
+				btnB.setEnabled(false);
 			}
 		});
 
@@ -46,6 +46,8 @@ public class Teclado extends JPanel {
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnC.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('C');
+				btnC.setEnabled(false);
 			}
 		});
 
@@ -55,6 +57,8 @@ public class Teclado extends JPanel {
 		btnD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnD.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('D');
+				btnD.setEnabled(false);
 			}
 		});
 
@@ -64,6 +68,8 @@ public class Teclado extends JPanel {
 		btnE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnE.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('E');
+				btnE.setEnabled(false);
 			}
 		});
 
@@ -75,6 +81,8 @@ public class Teclado extends JPanel {
 		btnF.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnF.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('F');
+				btnF.setEnabled(false);
 			}
 		});
 
@@ -84,6 +92,8 @@ public class Teclado extends JPanel {
 		btnG.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnG.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('G');
+				btnG.setEnabled(false);
 			}
 		});
 
@@ -93,6 +103,8 @@ public class Teclado extends JPanel {
 		btnH.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnH.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('H');
+				btnH.setEnabled(false);
 			}
 		});
 
@@ -102,6 +114,8 @@ public class Teclado extends JPanel {
 		btnI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnI.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('I');
+				btnI.setEnabled(false);
 			}
 		});
 
@@ -111,6 +125,8 @@ public class Teclado extends JPanel {
 		btnJ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnJ.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('J');
+				btnJ.setEnabled(false);
 			}
 		});
 
@@ -122,6 +138,8 @@ public class Teclado extends JPanel {
 		btnK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnK.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('K');
+				btnK.setEnabled(false);
 			}
 		});
 
@@ -131,6 +149,8 @@ public class Teclado extends JPanel {
 		btnL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnL.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('L');
+				btnL.setEnabled(false);
 			}
 		});
 
@@ -140,6 +160,8 @@ public class Teclado extends JPanel {
 		btnM.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnM.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('M');
+				btnM.setEnabled(false);
 			}
 		});
 
@@ -149,6 +171,8 @@ public class Teclado extends JPanel {
 		btnN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnN.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('N');
+				btnN.setEnabled(false);
 			}
 		});
 
@@ -158,6 +182,8 @@ public class Teclado extends JPanel {
 		btnÑ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnÑ.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('Ñ');
+				btnÑ.setEnabled(false);
 			}
 		});
 
@@ -169,6 +195,8 @@ public class Teclado extends JPanel {
 		btnO.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnO.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('O');
+				btnO.setEnabled(false);
 			}
 		});
 
@@ -178,6 +206,8 @@ public class Teclado extends JPanel {
 		btnP.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnP.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('P');
+				btnP.setEnabled(false);
 			}
 		});
 
@@ -187,6 +217,8 @@ public class Teclado extends JPanel {
 		btnQ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnQ.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('Q');
+				btnQ.setEnabled(false);
 			}
 		});
 
@@ -196,6 +228,8 @@ public class Teclado extends JPanel {
 		btnR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnR.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('R');
+				btnR.setEnabled(false);
 			}
 		});
 
@@ -205,6 +239,8 @@ public class Teclado extends JPanel {
 		btnS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnS.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('S');
+				btnS.setEnabled(false);
 			}
 		});
 
@@ -216,6 +252,8 @@ public class Teclado extends JPanel {
 		btnT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnT.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('T');
+				btnT.setEnabled(false);
 			}
 		});
 
@@ -225,6 +263,8 @@ public class Teclado extends JPanel {
 		btnU.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnU.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('U');
+				btnU.setEnabled(false);
 			}
 		});
 
@@ -234,6 +274,8 @@ public class Teclado extends JPanel {
 		btnV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnV.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('V');
+				btnV.setEnabled(false);
 			}
 		});
 
@@ -243,6 +285,8 @@ public class Teclado extends JPanel {
 		btnW.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnW.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('W');
+				btnW.setEnabled(false);
 			}
 		});
 
@@ -252,6 +296,8 @@ public class Teclado extends JPanel {
 		btnX.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnX.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('X');
+				btnX.setEnabled(false);
 			}
 		});
 		// Botones Y Z
@@ -261,6 +307,8 @@ public class Teclado extends JPanel {
 		btnY.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnY.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('Y');
+				btnY.setEnabled(false);
 			}
 		});
 
@@ -270,6 +318,8 @@ public class Teclado extends JPanel {
 		btnZ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnZ.setBackground(Color.lightGray);
+				palabra.editarAuxiliar('Z');
+				btnZ.setEnabled(false);
 			}
 		});
 	}
