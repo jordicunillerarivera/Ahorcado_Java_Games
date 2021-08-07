@@ -13,7 +13,7 @@ public class Menu extends JPanel {
 	setLayout(null);
 	
 	final JButton btnInicio = new JButton("Iniciar juego");
-	btnInicio.setBounds(10, 11, 230, 41);
+	btnInicio.setBounds(10, 22, 573, 41);
 	add(btnInicio);
 	btnInicio.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -21,8 +21,8 @@ public class Menu extends JPanel {
 		}
 	});
 
-	final JButton btnResolver = new JButton("Recolver");
-	btnResolver.setBounds(10, 59, 230, 41);
+	final JButton btnResolver = new JButton("Resolver");
+	btnResolver.setBounds(10, 70, 573, 41);
 	add(btnResolver);
 	btnResolver.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -30,5 +30,4 @@ public class Menu extends JPanel {
 	});
 
 	}
-
 }

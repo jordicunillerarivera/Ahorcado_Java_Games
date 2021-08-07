@@ -1,12 +1,9 @@
 package objetos;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 
 
 @SuppressWarnings("serial")
@@ -60,15 +57,7 @@ public class Pistas extends JPanel {
         labelImagen4.setBounds(374,11,90,90);
         labelImagen4.setIcon(new ImageIcon(getClass().
               getResource("/Imagenes/peepoPista80.gif")));
-        add(labelImagen4);
-        
-//        Border bordePista = new LineBorder(Color.black);
-//		labelImagen.setBorder(bordePista);
-//		labelImagen1.setBorder(bordePista);
-//		labelImagen2.setBorder(bordePista);
-//		labelImagen3.setBorder(bordePista);
-//		labelImagen4.setBorder(bordePista);
-		
+        add(labelImagen4);		
         
 	}
 
