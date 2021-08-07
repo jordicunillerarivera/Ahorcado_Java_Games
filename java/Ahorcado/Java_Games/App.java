@@ -2,13 +2,11 @@ package Ahorcado.Java_Games;
 
 import objetos.*;
 
-public class App 
-{
+public class App {
+	@SuppressWarnings("unused")
     public static void main( String[] args ) {
-    	
-    	@SuppressWarnings("unused")
-		AplicacionGrafica a = new AplicacionGrafica();
 
-    	
+		AplicacionGrafica aplicacionGrafica = new AplicacionGrafica();
+		
     }
 }
