@@ -19,13 +19,14 @@ public class AplicacionGrafica extends JFrame {
 	private Menu menu;
 	private Pistas pistas;
 	private Palabra palabra;
+	private int palabraAnterior;
 	
 
 	// Constructores
 	public AplicacionGrafica() {
 		
 		// Creamos la ventana
-		setTitle("Ahorcado");
+		setTitle("AdriAhorcado");
 		setBounds(400, 200, 1069, 725);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
@@ -39,13 +40,18 @@ public class AplicacionGrafica extends JFrame {
 		
 		iniciarPistas();
 		
-		iniciarPalabra();
+		iniciarPalabra(-1);
 		
 		teclado.llamarObjetos(palabra, imagenes);
+		menu.getObjetos(imagenes, teclado, palabra, pistas);
 		
 		menu.getBtnInicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				reiniciar();
+				menu.reiniciar();
+				palabraAnterior = palabra.getnRnd();
+				System.out.println(palabraAnterior);
+				palabra = null;
+				iniciarPalabra(palabraAnterior);
 			}
 		});
 		
@@ -76,28 +82,23 @@ public class AplicacionGrafica extends JFrame {
 	
 	public void iniciarPistas() {
 		pistas = new Pistas();
+		pistas.getBtnPista().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		pistas.setBounds(12, 141, 589, 215);
 		Border bordePista = new LineBorder(Color.black);
 		pistas.setBorder(bordePista);
 		getContentPane().add(pistas);
 	}
 
-	public void iniciarPalabra() {
-		palabra = new Palabra();
+	public void iniciarPalabra(int numAnterior) {
+		palabra = new Palabra(numAnterior);
 		palabra.setBounds(10, 134, 569, 70);
 		pistas.add(palabra);
 		Border bordePalabra = new TitledBorder(new EtchedBorder(), "Palabra secreta");
 		palabra.setBorder(bordePalabra);
+		palabra.getMenu(menu);
 	}
 	
-	public void reiniciar() {
-		imagenes.reiniciarImagen();
-		teclado.reiniciarTeclado();
-		palabra = null;
-		iniciarPalabra();
-		
-		pistas.getBtnPista().setEnabled(true);
-		pistas.setVida(5);
-		
-	}	
 }

@@ -2,7 +2,6 @@ package objetos;
 
 import javax.swing.*;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.util.Random;
 
@@ -18,38 +17,45 @@ public class Palabra extends JPanel {
 	private JLabel txtPalabra;
 	private int nRnd;
 	private int contAciertos;
-
-	public Palabra() {
+	private Menu menu;
 	
-	//panel
-	setLayout(null);
+	// Constructores
+	public Palabra(int numAnterior) {
 	
-	rnd=new Random();
-	palabras=generarPalabras();
-	nRnd=rnd.nextInt(10);
-	palabra=palabras[nRnd];
-	
-	caracteres=palabra.toUpperCase().toCharArray();
-	auxCaracteres=generarAuxiliar();
-	auxString=charToString();
-	
-	txtPalabra  =new JLabel(auxString);
-	Font font = new Font("SansSerif", Font.BOLD, 30);
-	txtPalabra.setFont(font);
-	txtPalabra.setBounds(10,0,560,62);
-	txtPalabra.setForeground(Color.BLACK);
-	add(txtPalabra);
+	crearPalabra(numAnterior);	
 		
 	}
 	
 	// Metodo
+	public void crearPalabra(int numAnterior) {
+		
+		setLayout(null);
+		contAciertos = 0;
+		
+		rnd=new Random();
+		palabras=generarPalabras();
+		do {
+			nRnd=rnd.nextInt(10);
+		} while(nRnd == numAnterior);
+		palabra=palabras[nRnd];
+		
+		caracteres=palabra.toUpperCase().toCharArray();
+		auxCaracteres=generarAuxiliar();
+		auxString=charToString();
+		
+		txtPalabra = new JLabel(auxString);
+		Font font = new Font("SansSerif", Font.BOLD, 30);
+		txtPalabra.setFont(font);
+		txtPalabra.setBounds(10,0,560,62);
+		add(txtPalabra);
+	}
+	
 	public void editarAuxiliar(char letra, Imagenes imagenes) {
 		int cont = 0;
 		for(int i=0;i<caracteres.length;i++) {
 			if(caracteres[i]==letra) {
 				auxCaracteres[i]=letra;
 				contAciertos++;
-				System.out.println(contAciertos);
 			}else {
 				cont++;
 			}
@@ -60,7 +66,7 @@ public class Palabra extends JPanel {
 		
 		if (contAciertos >= auxCaracteres.length) {
 			JOptionPane.showMessageDialog(null, "Has ganado!!");
-			
+			menu.reiniciar();
 		}
 		
 		if (cont == palabra.length()) {
@@ -104,4 +110,14 @@ public class Palabra extends JPanel {
 	
 	return auxCaracteres;
 	}
+	
+	public void getMenu(Menu menu) {
+		this.menu = menu;
+	}
+
+	// Setters & Getters
+	public int getnRnd() {
+		return nRnd;
+	}
+	
 }

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import java.awt.Font;
 
 
 @SuppressWarnings("serial")
@@ -11,6 +12,9 @@ public class Pistas extends JPanel {
 
 	// Atributos
 	private int vida;
+	private int vidaAux;
+	private JLabel vidasExtras;
+	private String txtVidasExtras;
     private JLabel labelImagen;
     private JLabel labelImagen1;
     private JLabel labelImagen2;
@@ -22,22 +26,32 @@ public class Pistas extends JPanel {
 	public Pistas() {
 
 		setLayout(null);
-		vida = 5;
+		vida = 7;
 		
 		btnPista = new JButton("Pista");
-		btnPista.setBounds(470, 11, 99, 49);
+		btnPista.setBounds(483, 11, 99, 49);
 		add(btnPista);
 		btnPista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vida--;
-				imagenVida();
+				actualizarVida();
 				btnPista.setEnabled(false);
 			}
 		});
 		
 		pintarPeepos();
-	           
-	}
+	    
+//		if (vida > 5) {
+			vidaAux=vida-5;
+	        txtVidasExtras= "x" + Integer.toString(vidaAux);
+	        vidasExtras=new JLabel(txtVidasExtras);
+	        vidasExtras.setFont(new Font("Arial", Font.PLAIN, 30));
+	        vidasExtras.setBounds(483,71,99,29);
+	        vidasExtras.setHorizontalAlignment(JLabel.CENTER);
+	        add(vidasExtras);
+		}
+		
+//	}
 	
 	// Metodos
 	public void pintarPeepos() {
@@ -80,7 +94,17 @@ public class Pistas extends JPanel {
 		
 	}
 	
-	public void imagenVida() {
+	public void actualizarVida() {
+		
+		if (vida > 5) {
+			vidasExtras.setVisible(true);
+			vidaAux=vida-5;
+			txtVidasExtras= "x" + Integer.toString(vidaAux);
+			vidasExtras.setText(txtVidasExtras);
+		} else if (vida <= 5) {
+			vidasExtras.setVisible(false);
+		}
+		
 		if (vida >= 5) {
 			labelImagen.setVisible(true);
 			labelImagen1.setVisible(true);
@@ -99,18 +123,18 @@ public class Pistas extends JPanel {
 			labelImagen.setVisible(false);
 			JOptionPane.showMessageDialog(null, "Has perdido!!");
 		}
+		
 	}
 
+	public void reiniciar(int vida) {
+		this.vida = vida;
+		actualizarVida();
+		btnPista.setEnabled(true);
+	}
+	
 	// Setters & Getters
 	public JButton getBtnPista() {
 		return btnPista;
 	}
-
-	public void setVida(int vida) {
-		this.vida = vida;
-		imagenVida();
-	}
-	
-	
 	
 }
