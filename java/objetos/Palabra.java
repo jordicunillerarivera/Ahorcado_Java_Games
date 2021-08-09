@@ -19,14 +19,15 @@ public class Palabra extends JPanel {
 	private int contAciertos;
 	private Menu menu;
 	
-	// Constructores
+	// 	Constructores
 	public Palabra(int numAnterior) {
 	
 	crearPalabra(numAnterior);	
 		
 	}
 	
-	// Metodo
+	// 	Metodo para generar una palabra dentro de nuestra lista de palabras.
+	
 	public void crearPalabra(int numAnterior) {
 		
 		setLayout(null);
@@ -50,6 +51,10 @@ public class Palabra extends JPanel {
 		add(txtPalabra);
 	}
 	
+	/**	Metodo para editar el array del Auxiliar, Auxiliar son los caracteres que se mostraran por pantalla, empezaran como _
+	* 	cuando se avanze en el juego ira añadiendo letras en las posiciones segun los aciertos y hara un contador de aciertos.
+	*	cuando el contador de aciertos llegue al numero de caracteres mostrara un mensaje de victoria.
+	*/
 	public void editarAuxiliar(char letra, Imagenes imagenes) {
 		int cont = 0;
 		for(int i=0;i<caracteres.length;i++) {
@@ -74,7 +79,10 @@ public class Palabra extends JPanel {
 		}
 
 	}
-		
+	
+	/**	Metodo que pasar la palabra generada a caracteres y asignarlos en un array de caracteres que utilizaremos para comparar 
+	* 	con el array axiliar e ir editandolo para mostrar el avanze de la partida.
+	*/
 	public String charToString() {
 		auxString = " ";
 		for(int i=0;i<auxCaracteres.length;i++) {
@@ -82,6 +90,8 @@ public class Palabra extends JPanel {
 		}
 		return auxString;
 	}
+	
+	//	Metodo que reyenar la array de palabras con las palabras que podran ser seleccionadas para ser la palabra secreta.
 	
 	public String[] generarPalabras() {
 	
@@ -101,6 +111,9 @@ public class Palabra extends JPanel {
 	return palabras;
 	}
 
+	/**	Metodo para generar una cadena de _ con el numero de caracteres que tendra la palabra secreta
+	*	y posteriormente editarla y mostrar el desarrollo de la partida.
+	*/
 	public char[] generarAuxiliar() {
 		
 	char auxCaracteres[]=new char[caracteres.length];
