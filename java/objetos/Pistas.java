@@ -53,7 +53,8 @@ public class Pistas extends JPanel {
 		
 //	}
 	
-	// Metodos
+	// Metodo para asignar las imagenes del numero de vidas disponibles.
+	
 	public void pintarPeepos() {
 	
 		if (vida >= 1) {
@@ -94,6 +95,8 @@ public class Pistas extends JPanel {
 		
 	}
 	
+	//Metodo para actualizar las imagenes de las vidas cuando se vayan perdiendo y mostrar un mensaje cuando lleguen a 0 vidas y se pierda.
+	
 	public void actualizarVida() {
 		
 		if (vida > 5) {
@@ -126,6 +129,8 @@ public class Pistas extends JPanel {
 		
 	}
 
+	//Metodo para reiniciar las vidas cuando se reinicie el juego.
+	
 	public void reiniciar(int vida) {
 		this.vida = vida;
 		actualizarVida();
