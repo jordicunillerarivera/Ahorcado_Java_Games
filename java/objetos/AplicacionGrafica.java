@@ -57,7 +57,8 @@ public class AplicacionGrafica extends JFrame {
 		
 	}
 	
-	// Metodos	
+	// 	Los metodos de AplicacionGrafica seran para asignar todos los demas objetos dentro de esta ventana principal y mostrarlos en pantalla.
+	
 	public void iniciarImagenes() {
 		imagenes = new Imagenes();
 		imagenes.setBounds(637, 30, 381, 590);
