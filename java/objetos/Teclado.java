@@ -8,7 +8,7 @@ import java.awt.event.*;
 @SuppressWarnings("serial")
 public class Teclado extends JPanel {
 
-	// Atributo
+	// Atributo necesarios para Teclado.
 	private Palabra palabra;
 	private Imagenes imagenes;
 	final JButton btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI, btnJ, btnK, btnL, btnM, btnN, btnÑ, btnO, btnP, btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX, btnY, btnZ;
@@ -17,7 +17,7 @@ public class Teclado extends JPanel {
 	public Teclado() {
 		
 		setLayout(null);
-
+		//Codigo para crear todos los botones con las letras del abecedario y con con sus correspondientes listeners y acciones.
 		// Botones A-E
 
 		btnA = new JButton("A");
@@ -332,6 +332,8 @@ public class Teclado extends JPanel {
 		this.palabra=palabra;
 		this.imagenes = imagenes;
 	}
+	
+	//Metodo para reiniciar todos los botones del teclado, para jugar con otra palabra.
 	
 	public void reiniciarTeclado() {
 		btnA.setEnabled(true);
