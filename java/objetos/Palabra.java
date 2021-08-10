@@ -2,7 +2,6 @@ package objetos;
 
 import javax.swing.*;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.util.Random;
 
@@ -18,38 +17,50 @@ public class Palabra extends JPanel {
 	private JLabel txtPalabra;
 	private int nRnd;
 	private int contAciertos;
-
-	public Palabra() {
+	private Menu menu;
 	
-	//panel
-	setLayout(null);
+	// 	Constructores
+	public Palabra(int numAnterior) {
 	
-	rnd=new Random();
-	palabras=generarPalabras();
-	nRnd=rnd.nextInt(10);
-	palabra=palabras[nRnd];
-	
-	caracteres=palabra.toUpperCase().toCharArray();
-	auxCaracteres=generarAuxiliar();
-	auxString=charToString();
-	
-	txtPalabra  =new JLabel(auxString);
-	Font font = new Font("SansSerif", Font.BOLD, 30);
-	txtPalabra.setFont(font);
-	txtPalabra.setBounds(10,0,560,62);
-	txtPalabra.setForeground(Color.BLACK);
-	add(txtPalabra);
+	crearPalabra(numAnterior);	
 		
 	}
 	
-	// Metodo
+	// 	Metodo para generar una palabra dentro de nuestra lista de palabras.
+	
+	public void crearPalabra(int numAnterior) {
+		
+		setLayout(null);
+		contAciertos = 0;
+		
+		rnd=new Random();
+		palabras=generarPalabras();
+		do {
+			nRnd=rnd.nextInt(10);
+		} while(nRnd == numAnterior);
+		palabra=palabras[nRnd];
+		
+		caracteres=palabra.toUpperCase().toCharArray();
+		auxCaracteres=generarAuxiliar();
+		auxString=charToString();
+		
+		txtPalabra = new JLabel(auxString);
+		Font font = new Font("SansSerif", Font.BOLD, 30);
+		txtPalabra.setFont(font);
+		txtPalabra.setBounds(10,0,560,62);
+		add(txtPalabra);
+	}
+	
+	/**	Metodo para editar el array del Auxiliar, Auxiliar son los caracteres que se mostraran por pantalla, empezaran como _
+	* 	cuando se avanze en el juego ira añadiendo letras en las posiciones segun los aciertos y hara un contador de aciertos.
+	*	cuando el contador de aciertos llegue al numero de caracteres mostrara un mensaje de victoria.
+	*/
 	public void editarAuxiliar(char letra, Imagenes imagenes) {
 		int cont = 0;
 		for(int i=0;i<caracteres.length;i++) {
 			if(caracteres[i]==letra) {
 				auxCaracteres[i]=letra;
 				contAciertos++;
-				System.out.println(contAciertos);
 			}else {
 				cont++;
 			}
@@ -60,7 +71,7 @@ public class Palabra extends JPanel {
 		
 		if (contAciertos >= auxCaracteres.length) {
 			JOptionPane.showMessageDialog(null, "Has ganado!!");
-			
+			menu.reiniciar();
 		}
 		
 		if (cont == palabra.length()) {
@@ -68,7 +79,10 @@ public class Palabra extends JPanel {
 		}
 
 	}
-		
+	
+	/**	Metodo que pasar la palabra generada a caracteres y asignarlos en un array de caracteres que utilizaremos para comparar 
+	* 	con el array axiliar e ir editandolo para mostrar el avanze de la partida.
+	*/
 	public String charToString() {
 		auxString = " ";
 		for(int i=0;i<auxCaracteres.length;i++) {
@@ -76,6 +90,8 @@ public class Palabra extends JPanel {
 		}
 		return auxString;
 	}
+	
+	//	Metodo que reyenar la array de palabras con las palabras que podran ser seleccionadas para ser la palabra secreta.
 	
 	public String[] generarPalabras() {
 	
@@ -95,6 +111,9 @@ public class Palabra extends JPanel {
 	return palabras;
 	}
 
+	/**	Metodo para generar una cadena de _ con el numero de caracteres que tendra la palabra secreta
+	*	y posteriormente editarla y mostrar el desarrollo de la partida.
+	*/
 	public char[] generarAuxiliar() {
 		
 	char auxCaracteres[]=new char[caracteres.length];
@@ -104,4 +123,14 @@ public class Palabra extends JPanel {
 	
 	return auxCaracteres;
 	}
+	
+	public void getMenu(Menu menu) {
+		this.menu = menu;
+	}
+
+	// Setters & Getters
+	public int getnRnd() {
+		return nRnd;
+	}
+	
 }
