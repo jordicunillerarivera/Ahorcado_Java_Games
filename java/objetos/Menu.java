@@ -50,7 +50,19 @@ public class Menu extends JPanel {
 		
 //		iniciarPalabra(palabra, pistas);
 		
-		pistas.reiniciar(Integer.parseInt(inputVidas.getText()));
+		try {
+			if (Integer.parseInt(inputVidas.getText()) > 1) {
+				pistas.reiniciar(Integer.parseInt(inputVidas.getText()));
+			} else {
+				JOptionPane.showMessageDialog(null, "Introduce un valor valido");
+				inputVidas.setText("5");
+				reiniciar();
+			}
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "Introduce un valor valido");
+			inputVidas.setText("5");
+			reiniciar();
+		}
 	}
 	
 	public void ganar() {
@@ -59,6 +71,7 @@ public class Menu extends JPanel {
 		JOptionPane.showMessageDialog(null, "Has ganado!!");
 		imagenes.reiniciarImagen();
 		teclado.reiniciarTeclado();
+		pistas.getBtnPista().setEnabled(true);
 	}
 	
 	public void perder() {
@@ -66,7 +79,7 @@ public class Menu extends JPanel {
 		reiniciar();
 	}
 	
-	public void getObjetos(Imagenes imagenes, Teclado teclado, Palabra palabra, Pistas pistas) {
+	public void setObjetos(Imagenes imagenes, Teclado teclado, Palabra palabra, Pistas pistas) {
 		this.imagenes = imagenes;
 		this.teclado = teclado;
 		this.palabra = palabra;

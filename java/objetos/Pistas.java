@@ -21,6 +21,7 @@ public class Pistas extends JPanel {
     private JLabel labelImagen3;
     private JLabel labelImagen4;
     private Palabra palabra;
+    private Menu menu;
     final JButton btnPista;
 
     // Constructor
@@ -124,7 +125,7 @@ public class Pistas extends JPanel {
 			labelImagen1.setVisible(false);
 		} else {
 			labelImagen.setVisible(false);
-			JOptionPane.showMessageDialog(null, "Has perdido!!");
+			menu.perder();
 		}
 		
 	}
@@ -142,8 +143,9 @@ public class Pistas extends JPanel {
 		return btnPista;
 	}
 	
-	public void setPalabra(Palabra palabra) {
+	public void setObjetos(Palabra palabra, Menu menu) {
 		this.palabra = palabra;
+		this.menu = menu;
 	}
 	
 }

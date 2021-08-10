@@ -50,7 +50,7 @@ public class Imagenes extends JPanel {
 			      getResource("/Imagenes/" + numImagen + ".png")));
 	}
 	
-	public void getMenu(Menu menu) {
+	public void setObjetos(Menu menu) {
 		this.menu = menu;
 	}
 	

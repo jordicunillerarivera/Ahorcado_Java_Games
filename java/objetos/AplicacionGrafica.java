@@ -42,10 +42,32 @@ public class AplicacionGrafica extends JFrame {
 		
 		iniciarPalabra(-1);
 		
-		teclado.llamarObjetos(palabra, imagenes);
-		menu.getObjetos(imagenes, teclado, palabra, pistas);
-		pistas.setPalabra(palabra);
-		imagenes.getMenu(menu);
+		teclado.setObjetos(palabra, imagenes);
+		menu.setObjetos(imagenes, teclado, palabra, pistas);
+		pistas.setObjetos(palabra, menu);
+		imagenes.setObjetos(menu);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu menuMenu = new JMenu("Ayuda");
+		menuBar.add(menuMenu);
+		
+		JMenuItem itemMenuJugar = new JMenuItem("Como jugar");
+		itemMenuJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Proximamente");
+			}
+		});
+		menuMenu.add(itemMenuJugar);
+		
+		JMenuItem itemMenuAbout = new JMenuItem("About");
+		itemMenuAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "AdriAhorcado\nVersion: 0.7\n\nCreadores:\nJordi Cunillera\nJose Luis Padilla\nMarius Toader");
+			}
+		});
+		menuMenu.add(itemMenuAbout);
 		
 		menu.getBtnInicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,5 +124,4 @@ public class AplicacionGrafica extends JFrame {
 		palabra.setBorder(bordePalabra);
 		palabra.getObjetos(menu, teclado);
 	}
-	
 }

@@ -135,6 +135,7 @@ public class Palabra extends JPanel {
 				txtPalabra.setText(auxString);
 				
 				if (contAciertos >= auxCaracteres.length) {
+					teclado.reiniciarTeclado();
 					menu.ganar();
 				}
 			}

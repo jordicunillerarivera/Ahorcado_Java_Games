@@ -328,11 +328,13 @@ public class Teclado extends JPanel {
 	}
 	
 	// Metodos
-	public void llamarObjetos(Palabra palabra, Imagenes imagenes) {
+	public void setObjetos(Palabra palabra, Imagenes imagenes) {
 		this.palabra=palabra;
 		this.imagenes = imagenes;
 	}
 	
+	
+	// Metodo para desactivar el boton correspondiente a la pista dada por la clase pista
 	public void desactivarBoton(String letra) {
 		
 		if (btnA.getText().equals(letra)) {
@@ -394,7 +396,6 @@ public class Teclado extends JPanel {
 	}
 	
 	//Metodo para reiniciar todos los botones del teclado, para jugar con otra palabra.
-	
 	public void reiniciarTeclado() {
 		btnA.setEnabled(true);
 		btnA.setBackground(null);
