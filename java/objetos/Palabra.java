@@ -106,7 +106,7 @@ public class Palabra extends JPanel {
 	palabras[6]="Abrelatas";
 	palabras[7]="Crucero";
 	palabras[8]="Pintalabios";
-	palabras[9]="Putojoseluis";
+	palabras[9]="Picaporte";
 	
 	return palabras;
 	}
