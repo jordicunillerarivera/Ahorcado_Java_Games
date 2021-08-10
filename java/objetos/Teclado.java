@@ -333,6 +333,66 @@ public class Teclado extends JPanel {
 		this.imagenes = imagenes;
 	}
 	
+	public void desactivarBoton(String letra) {
+		
+		if (btnA.getText().equals(letra)) {
+			btnA.doClick();
+		} else if (btnB.getText().equals(letra)) {
+			btnB.doClick();
+		} else if (btnC.getText().equals(letra)) {
+			btnC.doClick();
+		} else if (btnD.getText().equals(letra)) {
+			btnD.doClick();
+		} else if (btnE.getText().equals(letra)) {
+			btnE.doClick();
+		} else if (btnF.getText().equals(letra)) {
+			btnF.doClick();
+		} else if (btnG.getText().equals(letra)) {
+			btnG.doClick();
+		} else if (btnH.getText().equals(letra)) {
+			btnH.doClick();
+		} else if (btnI.getText().equals(letra)) {
+			btnI.doClick();
+		} else if (btnJ.getText().equals(letra)) {
+			btnJ.doClick();
+		} else if (btnK.getText().equals(letra)) {
+			btnK.doClick();
+		} else if (btnL.getText().equals(letra)) {
+			btnL.doClick();
+		} else if (btnM.getText().equals(letra)) {
+			btnM.doClick();
+		} else if (btnN.getText().equals(letra)) {
+			btnN.doClick();
+		} else if (btnÑ.getText().equals(letra)) {
+			btnÑ.doClick();
+		} else if (btnO.getText().equals(letra)) {
+			btnO.doClick();
+		} else if (btnP.getText().equals(letra)) {
+			btnP.doClick();
+		} else if (btnQ.getText().equals(letra)) {
+			btnQ.doClick();
+		} else if (btnR.getText().equals(letra)) {
+			btnR.doClick();
+		} else if (btnS.getText().equals(letra)) {
+			btnS.doClick();
+		} else if (btnT.getText().equals(letra)) {
+			btnT.doClick();
+		} else if (btnU.getText().equals(letra)) {
+			btnU.doClick();
+		} else if (btnV.getText().equals(letra)) {
+			btnV.doClick();
+		} else if (btnW.getText().equals(letra)) {
+			btnW.doClick();
+		} else if (btnX.getText().equals(letra)) {
+			btnX.doClick();
+		} else if (btnY.getText().equals(letra)) {
+			btnY.doClick();
+		} else if (btnZ.getText().equals(letra)) {
+			btnZ.doClick();
+		}
+		
+	}
+	
 	//Metodo para reiniciar todos los botones del teclado, para jugar con otra palabra.
 	
 	public void reiniciarTeclado() {

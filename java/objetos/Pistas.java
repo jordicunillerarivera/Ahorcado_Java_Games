@@ -20,13 +20,14 @@ public class Pistas extends JPanel {
     private JLabel labelImagen2;
     private JLabel labelImagen3;
     private JLabel labelImagen4;
+    private Palabra palabra;
     final JButton btnPista;
 
     // Constructor
 	public Pistas() {
 
 		setLayout(null);
-		vida = 7;
+		vida = 5;
 		
 		btnPista = new JButton("Pista");
 		btnPista.setBounds(483, 11, 99, 49);
@@ -35,23 +36,22 @@ public class Pistas extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				vida--;
 				actualizarVida();
+				palabra.mostrarPista();
 				btnPista.setEnabled(false);
 			}
 		});
 		
 		pintarPeepos();
 	    
-//		if (vida > 5) {
-			vidaAux=vida-5;
-	        txtVidasExtras= "x" + Integer.toString(vidaAux);
-	        vidasExtras=new JLabel(txtVidasExtras);
-	        vidasExtras.setFont(new Font("Arial", Font.PLAIN, 30));
-	        vidasExtras.setBounds(483,71,99,29);
-	        vidasExtras.setHorizontalAlignment(JLabel.CENTER);
-	        add(vidasExtras);
+		vidaAux=vida-5;
+        txtVidasExtras= "x" + Integer.toString(vidaAux);
+        vidasExtras=new JLabel(txtVidasExtras);
+        vidasExtras.setFont(new Font("Arial", Font.PLAIN, 30));
+        vidasExtras.setBounds(483,71,99,29);
+        vidasExtras.setHorizontalAlignment(JLabel.CENTER);
+        vidasExtras.setVisible(false);
+        add(vidasExtras);
 		}
-		
-//	}
 	
 	// Metodo para asignar las imagenes del numero de vidas disponibles.
 	
@@ -140,6 +140,10 @@ public class Pistas extends JPanel {
 	// Setters & Getters
 	public JButton getBtnPista() {
 		return btnPista;
+	}
+	
+	public void setPalabra(Palabra palabra) {
+		this.palabra = palabra;
 	}
 	
 }

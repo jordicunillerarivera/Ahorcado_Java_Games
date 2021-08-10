@@ -8,6 +8,7 @@ public class Imagenes extends JPanel {
 	// Atributos
 	private JLabel labelImagen;
 	private int numImagen;
+	private Menu menu;
 	
 	// Constructor
 	public Imagenes() {
@@ -31,18 +32,26 @@ public class Imagenes extends JPanel {
 		numImagen++;
 		labelImagen.setIcon(new ImageIcon(getClass().
 		      getResource("/Imagenes/" + numImagen + ".png")));
+		if (numImagen >= 10) {
+			menu.perder();
+		}
 	}
 	
-	public void pistas() {
+	public void resolver() {
 		numImagen = 10;
 		labelImagen.setIcon(new ImageIcon(getClass().
 		      getResource("/Imagenes/" + numImagen + ".png")));
+		
 	}
 
 	public void reiniciarImagen() {
 		this.numImagen = 0;
 		labelImagen.setIcon(new ImageIcon(getClass().
 			      getResource("/Imagenes/" + numImagen + ".png")));
+	}
+	
+	public void getMenu(Menu menu) {
+		this.menu = menu;
 	}
 	
 }

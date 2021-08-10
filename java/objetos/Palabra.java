@@ -18,6 +18,7 @@ public class Palabra extends JPanel {
 	private int nRnd;
 	private int contAciertos;
 	private Menu menu;
+	private Teclado teclado;
 	
 	// 	Constructores
 	public Palabra(int numAnterior) {
@@ -51,10 +52,10 @@ public class Palabra extends JPanel {
 		add(txtPalabra);
 	}
 	
-	/**	Metodo para editar el array del Auxiliar, Auxiliar son los caracteres que se mostraran por pantalla, empezaran como _
-	* 	cuando se avanze en el juego ira añadiendo letras en las posiciones segun los aciertos y hara un contador de aciertos.
-	*	cuando el contador de aciertos llegue al numero de caracteres mostrara un mensaje de victoria.
-	*/
+//		Metodo para editar el array del Auxiliar, Auxiliar son los caracteres que se mostraran por pantalla, empezaran como _
+//	 	cuando se avanze en el juego ira añadiendo letras en las posiciones segun los aciertos y hara un contador de aciertos.
+//		cuando el contador de aciertos llegue al numero de caracteres mostrara un mensaje de victoria.
+	
 	public void editarAuxiliar(char letra, Imagenes imagenes) {
 		int cont = 0;
 		for(int i=0;i<caracteres.length;i++) {
@@ -70,8 +71,7 @@ public class Palabra extends JPanel {
 		txtPalabra.setText(auxString);
 		
 		if (contAciertos >= auxCaracteres.length) {
-			JOptionPane.showMessageDialog(null, "Has ganado!!");
-			menu.reiniciar();
+			menu.ganar();
 		}
 		
 		if (cont == palabra.length()) {
@@ -80,9 +80,9 @@ public class Palabra extends JPanel {
 
 	}
 	
-	/**	Metodo que pasar la palabra generada a caracteres y asignarlos en un array de caracteres que utilizaremos para comparar 
-	* 	con el array axiliar e ir editandolo para mostrar el avanze de la partida.
-	*/
+//		Metodo que pasar la palabra generada a caracteres y asignarlos en un array de caracteres que utilizaremos para comparar 
+//	 	con el array axiliar e ir editandolo para mostrar el avanze de la partida.
+	
 	public String charToString() {
 		auxString = " ";
 		for(int i=0;i<auxCaracteres.length;i++) {
@@ -111,21 +111,52 @@ public class Palabra extends JPanel {
 	return palabras;
 	}
 
-	/**	Metodo para generar una cadena de _ con el numero de caracteres que tendra la palabra secreta
-	*	y posteriormente editarla y mostrar el desarrollo de la partida.
-	*/
+//		Metodo para generar una cadena de _ con el numero de caracteres que tendra la palabra secreta
+//		y posteriormente editarla y mostrar el desarrollo de la partida.
+	
 	public char[] generarAuxiliar() {
 		
-	char auxCaracteres[]=new char[caracteres.length];
-	for(int i=0;i<caracteres.length;i++) {
-		auxCaracteres[i]='_';
+		char auxCaracteres[]=new char[caracteres.length];
+		for(int i=0;i<caracteres.length;i++) {
+			auxCaracteres[i]='_';
+		}
+		return auxCaracteres;
+		
 	}
 	
-	return auxCaracteres;
+	public void resolver() {
+		
+		for (int i = 0; i < auxCaracteres.length; i++) {
+			if (auxCaracteres[i] == '_') {
+				auxCaracteres[i] = caracteres[i];
+				contAciertos++;
+				
+				auxString = charToString();
+				txtPalabra.setText(auxString);
+				
+				if (contAciertos >= auxCaracteres.length) {
+					menu.ganar();
+				}
+			}
+		}
 	}
 	
-	public void getMenu(Menu menu) {
+	public void mostrarPista() {
+		
+		for (int i = 0; i < auxCaracteres.length; i++) {
+			if (auxCaracteres[i] == '_') {
+				
+				String letra = String.valueOf(caracteres[i]);
+				teclado.desactivarBoton(letra);
+				
+				break;
+			}
+		}
+	}
+	
+	public void getObjetos(Menu menu, Teclado teclado) {
 		this.menu = menu;
+		this.teclado = teclado;
 	}
 
 	// Setters & Getters

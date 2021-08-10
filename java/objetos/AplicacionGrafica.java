@@ -44,12 +44,13 @@ public class AplicacionGrafica extends JFrame {
 		
 		teclado.llamarObjetos(palabra, imagenes);
 		menu.getObjetos(imagenes, teclado, palabra, pistas);
+		pistas.setPalabra(palabra);
+		imagenes.getMenu(menu);
 		
 		menu.getBtnInicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				menu.reiniciar();
 				palabraAnterior = palabra.getnRnd();
-				System.out.println(palabraAnterior);
 				palabra = null;
 				iniciarPalabra(palabraAnterior);
 			}
@@ -99,7 +100,7 @@ public class AplicacionGrafica extends JFrame {
 		pistas.add(palabra);
 		Border bordePalabra = new TitledBorder(new EtchedBorder(), "Palabra secreta");
 		palabra.setBorder(bordePalabra);
-		palabra.getMenu(menu);
+		palabra.getObjetos(menu, teclado);
 	}
 	
 }
